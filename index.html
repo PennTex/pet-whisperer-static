@@ -56,7 +56,7 @@
                         <a class="nav-link" href="#features">Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
+                        <a class="nav-link" href="#" onclick="lock.show();">Log in</a>
                     </li>
                 </ul>
             </div>
@@ -203,6 +203,22 @@
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
 
+    <script src="https://cdn.auth0.com/js/lock/10.14.0/lock.min.js"></script>
+    <script>
+        var options = {
+            auth: {
+                redirectUrl: 'https://app.petwhisperer.co',
+                languageDictionary: {
+                    title: "Pet Whisperer"
+                }
+            }
+        }
+        var lock = new Auth0Lock('nNeQx06JEjFktQLEpVCM48lsMsbB3739', 'pet-whisperer.auth0.com', options);
+        
+        lock.on('authenticated', function(authResult){
+            localStorage.setItem('id_token', authResult.idToken);
+        });
+    </script>
 </body>
 
 </html>
