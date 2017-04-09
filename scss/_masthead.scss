@@ -33,6 +33,9 @@ header.masthead {
     .device-container {
         max-width: 300px;
         margin: 0 auto 100px;
+        .screen {
+            background-color: white;
+        }
         .screen img {
             border-radius: 3px;
         }
