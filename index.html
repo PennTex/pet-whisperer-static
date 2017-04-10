@@ -201,11 +201,12 @@
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
 
+    <script src="vendor/js-cookie/js.cookie.js"></script>
     <script>
         (function(){
-            var token = localStorage.getItem('id_token');
+            var token = window.Cookies.get('id_token');
             var loginLogoutLink = document.getElementById('loginLogout');
-            
+
             if (token) {
                 console.log('logged in');
                 loginLogout.innerHTML = 'Dashboard';

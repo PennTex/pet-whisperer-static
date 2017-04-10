@@ -68,6 +68,8 @@ gulp.task('copy', function() {
     gulp.src(['node_modules/simple-line-icons/*/*'])
         .pipe(gulp.dest('vendor/simple-line-icons'))
 
+    gulp.src(['node_modules/js-cookie/src/js.cookie.js'])
+        .pipe(gulp.dest('vendor/js-cookie'))
 
     gulp.src([
             'node_modules/font-awesome/**',
